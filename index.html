@@ -19,6 +19,7 @@
 
     <main>
         <form>
+            <!-- Breed Input Box -->
             <label for="dog-name">Do you want to know more about a specific breed?</label>
             <input id="dog-name" type="text" name="name-breed" placeholder="Enter breed here..." />
             <br>
@@ -26,17 +27,51 @@
             <!-- <label for="housing">What is you home like?</label>
             <select id="housing" name="barking">
             </select> -->
-            
-            <div  class="dropdown">
+
+            <!-- Dog size drodown for HEIGHT & WEIGHT params -->
+            <div class="dropdown">
+                <button>What size pup do you prefer?</button>
+                <div id="dog-size" class="dropdown-content">
+                    <option value="small">Tall</option>
+                    <option value="medium">Grande</option>
+                    <option value="large">Venti</option>
+
+                </div>
+            </div>
+
+            <!-- Housing size dropdown for BARKING param -->
+            <div class="dropdown">
                 <button>What is your home like?</button>
                 <div id="housing-barking" class="dropdown-content">
                     <option value="appt">Apartment</option>
                     <option value="house">House</option>
-                    
+
                 </div>
             </div>
-            <br>
 
+            <!-- Activity levels dropdown for ENERGY param -->
+            <div class="dropdown">
+                <button>How often do you want to go on a walk?</button>
+                <div id="activity-level" class="dropdown-content">
+                    <option value="never">What is "a walk"?</option>
+                    <option value="rarely">Once a week, tops.</option>
+                    <option value="often">A couple days a week.</option>
+                    <option value="daily">Everyday please!</option>
+
+                </div>
+            </div>
+
+            <!-- Dog experience dropdown for TRAINABILITY param -->
+            <div class="dropdown">
+                <button>Are you interested in training your pup?</button>
+                <div id="housing-barking" class="dropdown-content">
+                    <option value="no-training">Nope.  It can just be a dog.</option>
+                    <option value="some-training">Definitely the basics.</option>
+                    <option value="all-training">This doggo will be max level.</option>
+
+
+                </div>
+            </div>
         </form>
 
     </main>

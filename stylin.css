@@ -13,7 +13,6 @@
 
 .dropdown:hover .dropdown-content {
     display: block;
-    transition-delay: 2s;
 }
 
 .dropdown-content option {
@@ -27,3 +26,4 @@
     color: #FFFFFF;
     background-color: #00A4BD;
 }
+
