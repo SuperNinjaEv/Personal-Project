@@ -20,9 +20,11 @@ fetch(searchURL, {
     }
 })
     .then((response) => response.json())
-    .then((data) => console.log(data))
+    .then((data) => {
+        console.log(data)
+        console.log(data[0].name)
+    })
     .catch((error) => console.log('Fetch fail!', error));
-
 
 
 

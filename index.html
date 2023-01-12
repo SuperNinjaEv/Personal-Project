@@ -11,7 +11,37 @@
 </head>
 
 <body>
-    <header><h1>Puppy Picker</h1></header>
+    <header>
+        <h1 style="text-align: center;">Puppy Picker</h1>
+    </header>
+
+    <div class="intro"></div>
+
+    <main>
+        <form>
+            <label for="dog-name">Do you want to know more about a specific breed?</label>
+            <input id="dog-name" type="text" name="name-breed" placeholder="Enter breed here..." />
+            <br>
+
+            <!-- <label for="housing">What is you home like?</label>
+            <select id="housing" name="barking">
+            </select> -->
+            
+            <div  class="dropdown">
+                <button>What is your home like?</button>
+                <div id="housing-barking" class="dropdown-content">
+                    <option value="appt">Apartment</option>
+                    <option value="house">House</option>
+                    
+                </div>
+            </div>
+            <br>
+
+        </form>
+
+    </main>
+
+
 
 </body>
 
