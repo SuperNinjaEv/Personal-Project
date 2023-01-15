@@ -7,7 +7,6 @@
 const BASE_URL = 'https://api.api-ninjas.com/v1/dogs?';
 const apiKey = '6lvPpxCfW0FIP2AKcl7U2Q==ANwlVpuyJt0h9OIz';
 
-
 // PARAM NOTES
 const dogNameBase = 'name=';
 const dogMaxWeightBase = 'max_weight=';
@@ -22,20 +21,7 @@ let searchURL = BASE_URL;
 const choicesForm = document.querySelector('form');
 const choicesSection = document.querySelector('section');
 const fetchButton = document.querySelector('.fetch');
-
-function fetchFunction(searchURL) {
-    fetch(searchURL, {
-        headers: {
-            'X-Api-Key': apiKey
-        }
-    })
-        .then((response) => response.json())
-        .then((data) => {
-            console.log(data)
-            console.log(data[0].name)
-        })
-        .catch((error) => console.log('Who let the dogs out?', error));
-};
+const main = document.querySelector('main');
 
 // Using event delegation, I have setup a listener for my FORM tag and all OPTION elements within.
 // This allows me to see when any are clicked, and subsequently create and add the chosen option to my Section 
@@ -46,8 +32,10 @@ choicesForm.addEventListener('click', (event) => {
     let clickedID = event.target.id;
     let clickedText = event.target.innerText;
 
+    // If user enters ion name of breed and hits 
     if (event.target.tagName === 'BUTTON') {
         let dogName = document.querySelector('#dog-name');
+        searchURL = BASE_URL;
         searchURL += dogNameBase + dogName.value;
         console.log(dogName.value);
         dogName.value = '';
@@ -134,8 +122,32 @@ choicesForm.addEventListener('click', (event) => {
     }
 });
 
+function fetchFunction(searchURL) {
+    fetch(searchURL, {
+        headers: {
+            'X-Api-Key': apiKey
+        }
+    })
+        .then((response) => response.json())
+        .then((data) => {
+            pokeDogs(data)
+            console.log(data)
+            console.log(data[0].name)
+        })
+        .catch((error) => console.log('Who let the dogs out?', error));
+};
+
+function pokeDogs (dt) {
+        let divCard = document.createElement('div');
+        divCard.className = 'dog-result';
+        divCard.innerText = 'The delay worked!'
+        main.append(divCard);
+}
+
 fetchButton.addEventListener('click', (event) => {
-    fetchFunction(searchURL);
+    main.innerHTML =  '';
+    setTimeout(fetchFunction, 4000, searchURL)
+    searchURL = BASE_URL;
 });
 
 

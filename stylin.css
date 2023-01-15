@@ -28,3 +28,24 @@
     background-color: #00A4BD;
 }
 
+.loading-list {
+    animation-name: pulse;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+@keyframes pulse {
+    0% {
+        opacity: 0.8;
+        color: #00A4BD;
+    }
+    50% {
+        opacity: 1;
+        color: darkblue;
+    }
+    100% {
+        opacity: 1;
+        color: blue;
+    }
+}
