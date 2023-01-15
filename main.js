@@ -9,9 +9,9 @@ const apiKey = '6lvPpxCfW0FIP2AKcl7U2Q==ANwlVpuyJt0h9OIz';
 
 
 // PARAM NOTES
-const dogNameBase = 'name=';  //CHANGE THIS**
-const dogMaxHeightBase = 'max_height=';
-const dogMinHeightBase = 'min_height=';
+const dogNameBase = 'name=';
+const dogMaxWeightBase = 'max_weight=';
+const dogMinWeightBase = 'min_weight=';
 const dogSheddingBase = 'shedding=';
 const dogBarkingBase = 'barking=';  //min of 1
 const dogEnergyBase = 'energy=';    //min of 2
@@ -23,53 +23,7 @@ const choicesForm = document.querySelector('form');
 const choicesSection = document.querySelector('section');
 const fetchButton = document.querySelector('.fetch');
 
-// Using event delegation, I have setup a listener for my FORM tag and all OPTION elements within.
-// This allows me to see when any are clicked, and subsequently create and add the chosen option to my Section 
-choicesForm.addEventListener('click', (event) => {
-    if (event.target.tagName === 'OPTION') {    //looking for an OPTION tag to be clicked
-        let clickedValue = event.target.value;
-        let clickedID = event.target.id;
-        console.log('You chose an option!', clickedID, clickedValue);
-
-        let chosenParam = document.createElement('button'); //make a BUTTON
-        chosenParam.innerText = event.target.innerText;     //add the clicked option to BUTTON
-        choicesSection.append(chosenParam);
-
-        if (clickedID === 'housing-barking') {
-            if (clickedValue === 'appt') {
-                let dogBarking = dogBarkingBase + '1&' + dogBarkingBase + '2&';
-                searchURL += dogBarking;
-                console.log(dogBarking, searchURL);
-            } else {
-                let dogBarking = dogBarkingBase + '3&' + dogBarkingBase + '4&' + dogBarkingBase + '5&';
-                searchURL += dogBarking;
-                console.log(dogBarking, searchURL);
-            }
-        } else if (clickedID === 'dog-size') {
-            if (clickedValue === 'small') {
-                let dogMaxHeight = dogMaxHeightBase + '15&';
-                searchURL += dogMaxHeight;
-                console.log(dogMaxHeight, searchURL)
-            } else if (clickedValue === 'medium') {
-
-            } else if (clickedValue === 'large') {
-
-            } else {
-
-            }
-
-        } else if (clickedID === 'activity-level') {
-
-        } else if (clickedID === 'training') {
-
-        }
-
-        chosenParam.addEventListener('click', () => chosenParam.remove());  //give that new button an event listener to remove it
-
-    }
-});
-
-fetchButton.addEventListener('click', (event) => {
+function fetchFunction(searchURL) {
     fetch(searchURL, {
         headers: {
             'X-Api-Key': apiKey
@@ -81,7 +35,111 @@ fetchButton.addEventListener('click', (event) => {
             console.log(data[0].name)
         })
         .catch((error) => console.log('Who let the dogs out?', error));
-})
+};
+
+// Using event delegation, I have setup a listener for my FORM tag and all OPTION elements within.
+// This allows me to see when any are clicked, and subsequently create and add the chosen option to my Section 
+choicesForm.addEventListener('click', (event) => {
+    event.preventDefault();
+
+    let clickedValue = event.target.value;
+    let clickedID = event.target.id;
+    let clickedText = event.target.innerText;
+
+    if (event.target.tagName === 'BUTTON') {
+        let dogName = document.querySelector('#dog-name');
+        searchURL += dogNameBase + dogName.value;
+        console.log(dogName.value);
+        dogName.value = '';
+        fetchFunction(searchURL);
+        searchURL = BASE_URL;
+    }
+    if (event.target.tagName === 'OPTION') {    //looking for an OPTION tag to be clicked
+        console.log('You chose an option!', clickedID, clickedValue);
+
+        let chosenParam = document.createElement('button'); //make a BUTTON
+        if (clickedText === 'What is a "walk"?') {
+            clickedText = 'A "walk" is something that you will have to do if you get a dog.';
+        };
+        // Working of edge case to check if user has already clicked an option from a category to remove previous
+        // if (choicesSection.getElementById(clickedID)) {
+        //     // choicesSection.getElementsByClassName
+        //     console.log('Found it already!')
+        // }
+        chosenParam.id = clickedID;
+        chosenParam.innerText = clickedText;     //add the clicked option to BUTTON
+        choicesSection.append(chosenParam);
+
+        if (clickedID === 'housing-barking') {
+            if (clickedValue === 'room') {
+                let dogBarking = dogBarkingBase + '1&';
+                searchURL += dogBarking;
+            } else if (clickedValue === 'apt') {
+                let dogBarking = dogBarkingBase + '2&';
+                searchURL += dogBarking;
+            } else if (clickedValue === 'house') {
+                let dogBarking = dogBarkingBase + '4&';
+                searchURL += dogBarking;
+            } else if (clickedValue === 'yard') {
+                let dogBarking = dogBarkingBase + '5&';
+                searchURL += dogBarking;
+            };
+        } else if (clickedID === 'dog-size') {
+            if (clickedValue === 'small') {
+                let dogMaxWeight = dogMaxWeightBase + '25&';
+                searchURL += dogMaxWeight;
+            } else if (clickedValue === 'medium') {
+                let dogMaxWeight = dogMaxWeightBase + '55&';
+                let dogMinWeight = dogMinWeightBase + '26&';
+                searchURL += dogMaxWeight + dogMinWeight;
+            } else if (clickedValue === 'large') {
+                let dogMaxWeight = dogMaxWeightBase + '200&';
+                let dogMinWeight = dogMinWeightBase + '56&';
+                searchURL += dogMaxWeight + dogMinWeight;
+            } else {
+                let dogMaxWeight = dogMaxWeightBase + '200&';
+                searchURL += dogMaxWeight;
+            };
+        } else if (clickedID === 'activity-level') {
+            if (clickedValue === 'never') {
+                let dogEnergy = dogEnergyBase + '2&';
+                searchURL += dogEnergy;
+            } else if (clickedValue === 'rarely') {
+                let dogEnergy = dogEnergyBase + '3&';
+                searchURL += dogEnergy;
+            } else if (clickedValue === 'often') {
+                let dogEnergy = dogEnergyBase + '4&';
+                searchURL += dogEnergy;
+            } else {
+                let dogEnergy = dogEnergyBase + '5&';
+                searchURL += dogEnergy;
+            }
+        } else if (clickedID === 'training') {
+            if (clickedValue === 'none') {
+                let dogTraining = dogTrainingBase + '1&';
+                searchURL += dogTraining;
+            } else if (clickedValue === 'some') {
+                let dogTraining = dogTrainingBase + '3&';
+                searchURL += dogTraining;
+            } else if (clickedValue === 'advanced') {
+                let dogTraining = dogTrainingBase + '4&';
+                searchURL += dogTraining;
+            } else if (clickedValue === 'max') {
+                let dogTraining = dogTrainingBase + '5&';
+                searchURL += dogTraining;
+            };
+        };
+        console.log(searchURL);
+        // chosenParam.addEventListener('click', () => chosenParam.remove());  //give that new button an event listener to remove it
+    }
+});
+
+fetchButton.addEventListener('click', (event) => {
+    fetchFunction(searchURL);
+});
+
+
+
 
 
 
