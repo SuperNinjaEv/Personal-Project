@@ -137,15 +137,17 @@ function fetchFunction(searchURL) {
         .catch((error) => console.log('Who let the dogs out?', error));
 };
 
-function pokeDogs (dt) {
+function pokeDogs(dt) {
+    for (let dog of dt) {
         let divCard = document.createElement('div');
         divCard.className = 'dog-result';
-        divCard.innerText = 'The delay worked!'
+        divCard.innerText = dog.name;
         main.append(divCard);
+    }
 }
 
 fetchButton.addEventListener('click', (event) => {
-    main.innerHTML =  '';
+    main.innerHTML = '';
     setTimeout(fetchFunction, 4000, searchURL)
     searchURL = BASE_URL;
 });
