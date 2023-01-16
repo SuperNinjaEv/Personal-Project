@@ -141,11 +141,45 @@ function fetchFunction(searchURL) {
 
 function pokeDogs(dt) {
     // for (let dog of dt) {
-        let cardObject = document.createElement('object');
-        cardObject.className = 'dog-result';
-        // cardObject.setAttribute('height', '400px')
-        cardObject.innerHTML = `<strong>${dt[0].name}</strong>`;  //change the [0] when done and back to loop**
-        main.append(cardObject);
+    let cardObject = document.createElement('object');
+    let cardTitle = document.createElement('section');
+    let cardImg = document.createElement('img');
+    let cardHeight = document.createElement('section');
+    let cardWeight = document.createElement('section');
+    let cardBark = document.createElement('section');
+    let cardEnergy = document.createElement('section');
+    let cardTrain = document.createElement('section');
+    let cardDrool = document.createElement('section');
+    let cardShed = document.createElement('section');
+    let cardCoat = document.createElement('section');
+    cardObject.className = 'dog-result';
+    cardTitle.setAttribute('class', 'card-title');
+    cardTitle.innerHTML = `<large><strong>${dt[0].name}</strong></large><br>`;  //change the [0] when done and back to loop**
+    main.append(cardObject);
+    cardImg.setAttribute('src', dt[0].image_link );
+    cardImg.setAttribute('alt', `${dt[0].name} Pic`);
+    cardImg.setAttribute('height', '200px');
+    // cardImg.setAttribute('width', '300px');
+    cardImg.setAttribute('class', 'card-img');
+    cardImg.setAttribute('style', 'border:3px ridge black;vertical-align:middle;margin: 3px 3px');
+    cardHeight.setAttribute('class', 'card-stats');
+    cardHeight.innerHTML = `<small><em>Max Height: ${dt[0].max_height_male}"</em></small>`;
+    cardWeight.setAttribute('class', 'card-stats');
+    cardWeight.innerHTML = `<small><em>Max Weight: ${dt[0].max_weight_male} lbs.</em></small>`;
+    cardBark.setAttribute('class', 'card-stats1');
+    cardBark.innerHTML = `<small><strong>Barking:</strong></small> ${dt[0].barking}`;
+    cardEnergy.setAttribute('class', 'card-stats1');
+    cardEnergy.innerHTML = `<small><strong>Energy:</strong></small> ${dt[0].energy}`;
+    cardTrain.setAttribute('class', 'card-stats2');
+    cardTrain.innerHTML = `<small><strong>Trainability:</strong></small> ${dt[0].trainability}`;
+    cardDrool.setAttribute('class', 'card-stats2');
+    cardDrool.innerHTML = `<small><strong>Drooling:</strong></small> ${dt[0].drooling}`;
+    cardShed.setAttribute('class', 'card-stats3');
+    cardShed.innerHTML = `<small><strong>Shedding:</strong></small> ${dt[0].shedding}`;
+    cardCoat.setAttribute('class', 'card-stats3');
+    cardCoat.innerHTML = `<small><strong>Coat Length:</strong></small> ${dt[0].coat_length}`;
+
+    cardObject.append(cardTitle, cardImg, cardHeight, cardWeight, cardBark, cardEnergy, cardTrain, cardDrool, cardShed, cardCoat);
     // }
 }
 

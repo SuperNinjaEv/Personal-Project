@@ -1,8 +1,43 @@
+html, body {
+    height: 95%;
+}
+body{
+    /* display: flex; */
+    align-content: center;
+    justify-content: center;
+
+}
 .dog-result {
+    display: grid;
+    align-content: center;
+    background-color: lightskyblue;
     border-style: ridge;
     border-width: 5px;
-    height: 1000px;
-    width: 500px;
+    height: 4.5in;
+    width: 3.3in;
+    border-radius: 15px;
+}
+.card-title {
+    background-color: lightpink;
+    height: 35px;
+    justify-content: left;
+    text-align: center;
+}
+.card-stats {
+    background-color: antiquewhite;
+    height: 20px;
+}
+.card-stats1 {
+    background-color: aqua;
+    height: 20px;
+}
+.card-stats2 {
+    background-color: lightsalmon;
+    height: 20px;
+}
+.card-stats3 {
+    background-color: lightblue;
+    height: 20px;
 }
 .dropdown {
     display: inline-block;
