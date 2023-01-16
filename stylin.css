@@ -1,8 +1,13 @@
+.dog-result {
+    border-style: ridge;
+    border-width: 5px;
+    height: 1000px;
+    width: 500px;
+}
 .dropdown {
     display: inline-block;
     position: relative;
 }
-
 .dropdown-content {
     display: none;
     position: absolute;
@@ -10,11 +15,9 @@
     overflow: auto;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
-
 .dropdown:hover .dropdown-content {
     display: block;
 }
-
 .dropdown-content option {
    background-color: #FFFFFF;
     display: block;
@@ -22,12 +25,10 @@
     padding: 5px;
     text-decoration: none;
 }
-
 .dropdown-content option:hover {
     color: #FFFFFF;
     background-color: #00A4BD;
 }
-
 .loading-list {
     animation-name: pulse;
     animation-duration: 1s;

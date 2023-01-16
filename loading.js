@@ -16,7 +16,7 @@ const pageLoad = {
         setTimeout(() => {
             let loadMsg = document.querySelector('.loading-list');
             bodyLoad.removeChild(loadMsg)
-        }, 4000)
+        }, 500)
     }
 }
 pageLoad.init()

@@ -123,6 +123,8 @@ choicesForm.addEventListener('click', (event) => {
 });
 
 function fetchFunction(searchURL) {
+    main.innerHTML = '';
+
     fetch(searchURL, {
         headers: {
             'X-Api-Key': apiKey
@@ -138,17 +140,17 @@ function fetchFunction(searchURL) {
 };
 
 function pokeDogs(dt) {
-    for (let dog of dt) {
-        let divCard = document.createElement('div');
-        divCard.className = 'dog-result';
-        divCard.innerText = dog.name;
-        main.append(divCard);
-    }
+    // for (let dog of dt) {
+        let cardObject = document.createElement('object');
+        cardObject.className = 'dog-result';
+        // cardObject.setAttribute('height', '400px')
+        cardObject.innerHTML = `<strong>${dt[0].name}</strong>`;  //change the [0] when done and back to loop**
+        main.append(cardObject);
+    // }
 }
 
 fetchButton.addEventListener('click', (event) => {
-    main.innerHTML = '';
-    setTimeout(fetchFunction, 4000, searchURL)
+    setTimeout(fetchFunction, 500, searchURL)
     searchURL = BASE_URL;
 });
 
