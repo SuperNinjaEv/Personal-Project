@@ -141,7 +141,7 @@ function fetchFunction(searchURL) {
 };
 
 function pokeDogs(dt) {
-    // for (let dog of dt) {
+    for (let dog of dt) {
     let cardArtic = document.createElement('article');
     let cardTitle = document.createElement('section');
     let cardImg = document.createElement('img');
@@ -157,36 +157,37 @@ function pokeDogs(dt) {
     let cardCoat = document.createElement('section');
     cardArtic.className = 'dog-result';
     cardTitle.setAttribute('class', 'card-title');
-    cardTitle.innerHTML = `<strong>${dt[0].name}</strong><br>`;  //change the [0] when done and back to loop**
+    cardTitle.innerHTML = `<strong>${dog.name}</strong><br>`;  //change the [0] when done and back to loop**
     resultArea.append(cardArtic);
-    cardImg.setAttribute('src', dt[0].image_link );
-    cardImg.setAttribute('alt', `${dt[0].name} Pic`);
+    cardImg.setAttribute('src', dog.image_link );
+    cardImg.setAttribute('alt', `${dog.name} Pic`);
     // cardImg.setAttribute('height', '200px');
     // cardImg.setAttribute('width', '300px');
     cardImg.setAttribute('class', 'card-img');
     cardHeight.setAttribute('class', 'card-stats');
-    cardHeight.innerHTML = `<small><em>Max Height: ${dt[0].max_height_male}"</em></small>&nbsp;&nbsp;&nbsp;&nbsp;<small><em>Max Weight: ${dt[0].max_weight_male} lbs.</em></small>`;
+    cardHeight.innerHTML = `<small><em>Max Height: ${dog.max_height_male}"</em></small>&nbsp;&nbsp;&nbsp;&nbsp;<small><em>Max Weight: ${dog.max_weight_male} lbs.</em></small>`;
     // cardWeight.setAttribute('class', 'card-stats');
-    // cardWeight.innerHTML = `<small><em>Max Weight: ${dt[0].max_weight_male} lbs.</em></small>`;
+    // cardWeight.innerHTML = `<small><em>Max Weight: ${dog.max_weight_male} lbs.</em></small>`;
     cardBark.setAttribute('class', 'card-stats1');
-    cardBark.innerHTML = `<small><strong>Barking:</strong></small> ${dt[0].barking}`;
+    cardBark.innerHTML = `<small><strong>Barking:</strong></small> ${dog.barking}`;
     cardEnergy.setAttribute('class', 'card-stats2');
-    cardEnergy.innerHTML = `<small><strong>Energy:</strong></small> ${dt[0].energy}`;
+    cardEnergy.innerHTML = `<small><strong>Energy:</strong></small> ${dog.energy}`;
     cardTrain.setAttribute('class', 'card-stats3');
-    cardTrain.innerHTML = `<small><strong>Trainability:</strong></small> ${dt[0].trainability}`;
+    cardTrain.innerHTML = `<small><strong>Trainability:</strong></small> ${dog.trainability}`;
     cardDrool.setAttribute('class', 'card-stats4');
-    cardDrool.innerHTML = `<small><strong>Drooling:</strong></small> ${dt[0].drooling}`;
+    cardDrool.innerHTML = `<small><strong>Drooling:</strong></small> ${dog.drooling}`;
     cardPlay.setAttribute('class', 'card-stats5');
-    cardPlay.innerHTML = `<small><strong>Playfulness:</strong></small> ${dt[0].playfulness}`;
+    cardPlay.innerHTML = `<small><strong>Playfulness:</strong></small> ${dog.playfulness}`;
     cardProtek.setAttribute('class', 'card-stats6');
-    cardProtek.innerHTML = `<small><strong>Protectiveness:</strong></small> ${dt[0].protectiveness}`;
+    cardProtek.innerHTML = `<small><strong>Protectiveness:</strong></small> ${dog.protectiveness}`;
     cardShed.setAttribute('class', 'card-stats7');
-    cardShed.innerHTML = `<small><strong>Shedding:</strong></small> ${dt[0].shedding}`;
+    cardShed.innerHTML = `<small><strong>Shedding:</strong></small> ${dog.shedding}`;
     cardCoat.setAttribute('class', 'card-stats8');
-    cardCoat.innerHTML = `<small><strong>Coat Length:</strong></small> ${dt[0].coat_length}`;
+    cardCoat.innerHTML = `<small><strong>Coat Length:</strong></small> ${dog.coat_length}`;
 
     cardArtic.append(cardTitle, cardImg, cardHeight, cardWeight, cardBark, cardEnergy, cardTrain,cardPlay, cardProtek, cardDrool, cardShed, cardCoat);
-    // }
+    };
+    main.append(resultArea);
 }
 
 fetchButton.addEventListener('click', (event) => {

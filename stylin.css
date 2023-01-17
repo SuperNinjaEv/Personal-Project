@@ -7,6 +7,12 @@ body{
     align-content: center;
     justify-content: center;
 }
+main {
+    display: inline-flex;
+    flex-direction: row;
+    flex: auto;
+    flex-flow: column;
+}
 .dog-result {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -38,15 +44,17 @@ body{
     transform-style: preserve-3d;
 }
 .card-title {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: bolder;
     text-align: left;
     text-shadow: 5px black;
     padding-left: 33px;
-    padding-top: 20px;
+    padding-top: 15px;
     margin-top: 10px;
     grid-area: title;
     height: 25px;
+    width: 80%;
+    justify-content: flex-start;
     /* background-color: lightpink; */
 }
 img {
@@ -80,7 +88,7 @@ img {
     font-size: x-large;
     font-weight: bolder;
     font-size-adjust: inherit;
-    padding: 10px 5px 5px 37px;
+    padding: 5px 5px 5px 37px;
     /* background-color: aqua; */
     height: 30px;
 }
@@ -90,7 +98,7 @@ img {
     font-size: x-large;
     font-weight: bolder;
     font-size-adjust: inherit;
-    padding: 10px 15px 5px 25px;
+    padding: 5px 15px 5px 25px;
     /* background-color: aqua; */
     height: 30px;
 }
@@ -127,7 +135,7 @@ img {
     font-size: medium;
     font-weight: bolder;
     font-size-adjust: inherit;
-    padding: 10px 15px 1px 40px;
+    padding: 13px 15px 1px 40px;
     /* background-color: aqua; */
     height: 30px;
 }
@@ -137,7 +145,7 @@ img {
     font-size: medium;
     font-weight: bolder;
     font-size-adjust: inherit;
-    padding: 10px 15px 1px 20px;
+    padding: 13px 15px 1px 20px;
     /* background-color: aqua; */
     height: 30px;
 }
