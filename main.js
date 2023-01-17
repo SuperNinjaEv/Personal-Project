@@ -151,6 +151,8 @@ function pokeDogs(dt) {
     let cardEnergy = document.createElement('section');
     let cardTrain = document.createElement('section');
     let cardDrool = document.createElement('section');
+    let cardPlay = document.createElement('section');
+    let cardProtek = document.createElement('section');
     let cardShed = document.createElement('section');
     let cardCoat = document.createElement('section');
     cardArtic.className = 'dog-result';
@@ -174,12 +176,16 @@ function pokeDogs(dt) {
     cardTrain.innerHTML = `<small><strong>Trainability:</strong></small> ${dt[0].trainability}`;
     cardDrool.setAttribute('class', 'card-stats4');
     cardDrool.innerHTML = `<small><strong>Drooling:</strong></small> ${dt[0].drooling}`;
-    cardShed.setAttribute('class', 'card-stats5');
+    cardPlay.setAttribute('class', 'card-stats5');
+    cardPlay.innerHTML = `<small><strong>Playfulness:</strong></small> ${dt[0].playfulness}`;
+    cardProtek.setAttribute('class', 'card-stats6');
+    cardProtek.innerHTML = `<small><strong>Protectiveness:</strong></small> ${dt[0].protectiveness}`;
+    cardShed.setAttribute('class', 'card-stats7');
     cardShed.innerHTML = `<small><strong>Shedding:</strong></small> ${dt[0].shedding}`;
-    cardCoat.setAttribute('class', 'card-stats6');
+    cardCoat.setAttribute('class', 'card-stats8');
     cardCoat.innerHTML = `<small><strong>Coat Length:</strong></small> ${dt[0].coat_length}`;
 
-    cardArtic.append(cardTitle, cardImg, cardHeight, cardWeight, cardBark, cardEnergy, cardTrain, cardDrool, cardShed, cardCoat);
+    cardArtic.append(cardTitle, cardImg, cardHeight, cardWeight, cardBark, cardEnergy, cardTrain,cardPlay, cardProtek, cardDrool, cardShed, cardCoat);
     // }
 }
 

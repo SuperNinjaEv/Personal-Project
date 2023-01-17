@@ -16,7 +16,8 @@ body{
     "stat stat"
     "stat1 stat2"
     "stat3 stat4"
-    "stat5 stat6";
+    "stat5 stat6"
+    "stat7 stat8";
     align-content: center;
     background-image: url('https://i.pinimg.com/564x/64/2d/df/642ddf0b07b51838d84b6603b6e3022f.jpg');
     background-size: 100%;
@@ -41,10 +42,11 @@ body{
     font-weight: bolder;
     text-align: left;
     text-shadow: 5px black;
-    padding-left: 36px;
-    padding-top: 13px;
+    padding-left: 33px;
+    padding-top: 20px;
+    margin-top: 10px;
     grid-area: title;
-    height: 30px;
+    height: 25px;
     /* background-color: lightpink; */
 }
 img {
@@ -52,10 +54,10 @@ img {
     border:3px ridge black;
     border-radius: 5px;
     width: 250px;
-    height: 185px;
+    height: 180px;
     justify-self: center;
     vertical-align:middle;
-    margin: 5px 5px;
+    margin-top: 5px;
     overflow: hidden;
 }
 .card-stats {
@@ -63,42 +65,41 @@ img {
     text-align: center;
     font-size: smaller;
     justify-self: center;
-    margin-top: 10px;
-    padding: 5px 15px 5px 15px;
+    /* margin-top: 5px; */
+    /* padding: 3px 15px 3px 15px; */
     /* background-color: antiquewhite; */
-    border-style: groove;
+    /* border-style: groove;
     border-color: #000000;
-    border-radius: 5px;
-    height: 20px;
-    width: 65%;
+    border-radius: 5px; */
+    height: 30px;
+    width: 72%;
 }
 .card-stats1 {
     grid-area: stat1;
     text-align: left;
-    font-size: large;
+    font-size: x-large;
     font-weight: bolder;
     font-size-adjust: inherit;
-    padding: 10px 15px 1px 40px;
+    padding: 10px 5px 5px 37px;
     /* background-color: aqua; */
     height: 30px;
 }
 .card-stats2 {
     grid-area: stat2;
     text-align: left;
-    font-size: large;
+    font-size: x-large;
     font-weight: bolder;
     font-size-adjust: inherit;
-    padding: 10px 15px 1px 30px;
+    padding: 10px 15px 5px 25px;
     /* background-color: aqua; */
     height: 30px;
 }
 .card-stats3 {
     grid-area: stat3;
     text-align: left;
-    font-size: large;
+    font-size: x-large;
     font-weight: bolder;
-    font-size-adjust: inherit;
-    padding: 1px 15px 5px 40px;
+    padding: 10px 1px 5px 34px;
     /* background-color: lightsalmon; */
     /* border-style: solid;
     border-left: #000000;
@@ -109,10 +110,10 @@ img {
 .card-stats4 {
     grid-area: stat4;
     text-align: left;
-    font-size: large;
+    font-size: x-large;
     font-weight: bolder;
     font-size-adjust: inherit;
-    padding: 1px 15px 5px 30px;
+    padding: 10px 1px 5px 25px;
     /* background-color: lightsalmon; */
     /* border-style: solid;
     border-left: #000000;
@@ -123,7 +124,28 @@ img {
 .card-stats5 {
     grid-area: stat5;
     text-align: left;
-    padding: 20px 15px 5px 40px;
+    font-size: medium;
+    font-weight: bolder;
+    font-size-adjust: inherit;
+    padding: 10px 15px 1px 40px;
+    /* background-color: aqua; */
+    height: 30px;
+}
+.card-stats6 {
+    grid-area: stat6;
+    text-align: left;
+    font-size: medium;
+    font-weight: bolder;
+    font-size-adjust: inherit;
+    padding: 10px 15px 1px 20px;
+    /* background-color: aqua; */
+    height: 30px;
+}
+.card-stats7 {
+    grid-area: stat7;
+    text-align: left;
+    font-size: small;
+    padding: 1px 5px 15px 50px;
     /* background-color: lightblue; */
     /* border-style: solid;
     border-left: #000000;
@@ -131,10 +153,11 @@ img {
     border-bottom: #000000; */
     height: 30px;
 }
-.card-stats6 {
-    grid-area: stat6;
+.card-stats8 {
+    grid-area: stat8;
     text-align: left;
-    padding: 20px 5px 5px 30px;
+    font-size: small;
+    padding: 1px 5px 15px 25px;
     /* background-color: lightblue; */
     /* border-style: solid;
     border-left: #000000;
