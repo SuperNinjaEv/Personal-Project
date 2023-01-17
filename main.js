@@ -18,10 +18,11 @@ const dogTrainingBase = 'trainability=';    //min of 1
 
 let searchURL = BASE_URL;
 
-const choicesForm = document.querySelector('form');
-const choicesSection = document.querySelector('section');
-const fetchButton = document.querySelector('.fetch');
 const main = document.querySelector('main');
+const choicesForm = document.querySelector('form');
+const fetchButton = document.querySelector('.fetch');
+const choicesSection = document.querySelector('section');
+const resultArea = document.querySelector('.result-area');
 
 // Using event delegation, I have setup a listener for my FORM tag and all OPTION elements within.
 // This allows me to see when any are clicked, and subsequently create and add the chosen option to my Section 
@@ -141,7 +142,7 @@ function fetchFunction(searchURL) {
 
 function pokeDogs(dt) {
     // for (let dog of dt) {
-    let cardObject = document.createElement('object');
+    let cardArtic = document.createElement('article');
     let cardTitle = document.createElement('section');
     let cardImg = document.createElement('img');
     let cardHeight = document.createElement('section');
@@ -152,34 +153,33 @@ function pokeDogs(dt) {
     let cardDrool = document.createElement('section');
     let cardShed = document.createElement('section');
     let cardCoat = document.createElement('section');
-    cardObject.className = 'dog-result';
+    cardArtic.className = 'dog-result';
     cardTitle.setAttribute('class', 'card-title');
-    cardTitle.innerHTML = `<large><strong>${dt[0].name}</strong></large><br>`;  //change the [0] when done and back to loop**
-    main.append(cardObject);
+    cardTitle.innerHTML = `<strong>${dt[0].name}</strong><br>`;  //change the [0] when done and back to loop**
+    resultArea.append(cardArtic);
     cardImg.setAttribute('src', dt[0].image_link );
     cardImg.setAttribute('alt', `${dt[0].name} Pic`);
-    cardImg.setAttribute('height', '200px');
+    // cardImg.setAttribute('height', '200px');
     // cardImg.setAttribute('width', '300px');
     cardImg.setAttribute('class', 'card-img');
-    cardImg.setAttribute('style', 'border:3px ridge black;vertical-align:middle;margin: 3px 3px');
     cardHeight.setAttribute('class', 'card-stats');
-    cardHeight.innerHTML = `<small><em>Max Height: ${dt[0].max_height_male}"</em></small>`;
-    cardWeight.setAttribute('class', 'card-stats');
-    cardWeight.innerHTML = `<small><em>Max Weight: ${dt[0].max_weight_male} lbs.</em></small>`;
+    cardHeight.innerHTML = `<small><em>Max Height: ${dt[0].max_height_male}"</em></small>&nbsp;&nbsp;&nbsp;&nbsp;<small><em>Max Weight: ${dt[0].max_weight_male} lbs.</em></small>`;
+    // cardWeight.setAttribute('class', 'card-stats');
+    // cardWeight.innerHTML = `<small><em>Max Weight: ${dt[0].max_weight_male} lbs.</em></small>`;
     cardBark.setAttribute('class', 'card-stats1');
     cardBark.innerHTML = `<small><strong>Barking:</strong></small> ${dt[0].barking}`;
-    cardEnergy.setAttribute('class', 'card-stats1');
+    cardEnergy.setAttribute('class', 'card-stats2');
     cardEnergy.innerHTML = `<small><strong>Energy:</strong></small> ${dt[0].energy}`;
-    cardTrain.setAttribute('class', 'card-stats2');
+    cardTrain.setAttribute('class', 'card-stats3');
     cardTrain.innerHTML = `<small><strong>Trainability:</strong></small> ${dt[0].trainability}`;
-    cardDrool.setAttribute('class', 'card-stats2');
+    cardDrool.setAttribute('class', 'card-stats4');
     cardDrool.innerHTML = `<small><strong>Drooling:</strong></small> ${dt[0].drooling}`;
-    cardShed.setAttribute('class', 'card-stats3');
+    cardShed.setAttribute('class', 'card-stats5');
     cardShed.innerHTML = `<small><strong>Shedding:</strong></small> ${dt[0].shedding}`;
-    cardCoat.setAttribute('class', 'card-stats3');
+    cardCoat.setAttribute('class', 'card-stats6');
     cardCoat.innerHTML = `<small><strong>Coat Length:</strong></small> ${dt[0].coat_length}`;
 
-    cardObject.append(cardTitle, cardImg, cardHeight, cardWeight, cardBark, cardEnergy, cardTrain, cardDrool, cardShed, cardCoat);
+    cardArtic.append(cardTitle, cardImg, cardHeight, cardWeight, cardBark, cardEnergy, cardTrain, cardDrool, cardShed, cardCoat);
     // }
 }
 

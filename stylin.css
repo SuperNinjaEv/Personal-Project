@@ -2,42 +2,145 @@ html, body {
     height: 95%;
 }
 body{
+    font-family: 'Exo 2', sans-serif;
     /* display: flex; */
     align-content: center;
     justify-content: center;
-
 }
 .dog-result {
     display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    'title title'
+    'img img'
+    "stat stat"
+    "stat1 stat2"
+    "stat3 stat4"
+    "stat5 stat6";
     align-content: center;
-    background-color: lightskyblue;
+    background-image: url('https://i.pinimg.com/564x/64/2d/df/642ddf0b07b51838d84b6603b6e3022f.jpg');
+    background-size: 100%;
     border-style: ridge;
-    border-width: 5px;
+    border-width: 9px;
+    border-color: #d3c39d;
+    box-shadow: 10px 5px 10px black, 25px 20px 15px rgb(24, 24, 49);
+    border-radius: 14px;
     height: 4.5in;
     width: 3.3in;
-    border-radius: 15px;
+    overflow: hidden;
+}
+.dog-result:hover {
+    box-shadow: 25px 20px 15px rgb(24, 24, 49), 25px 35px 25px darkslategray;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in;
+    transform: skew(1deg) rotate(1deg);
+    transform-style: preserve-3d;
 }
 .card-title {
-    background-color: lightpink;
-    height: 35px;
-    justify-content: left;
-    text-align: center;
+    font-size: 22px;
+    font-weight: bolder;
+    text-align: left;
+    text-shadow: 5px black;
+    padding-left: 36px;
+    padding-top: 13px;
+    grid-area: title;
+    height: 30px;
+    /* background-color: lightpink; */
+}
+img {
+    grid-area: img;
+    border:3px ridge black;
+    border-radius: 5px;
+    width: 250px;
+    height: 185px;
+    justify-self: center;
+    vertical-align:middle;
+    margin: 5px 5px;
+    overflow: hidden;
 }
 .card-stats {
-    background-color: antiquewhite;
+    grid-area: stat;
+    text-align: center;
+    font-size: smaller;
+    justify-self: center;
+    margin-top: 10px;
+    padding: 5px 15px 5px 15px;
+    /* background-color: antiquewhite; */
+    border-style: groove;
+    border-color: #000000;
+    border-radius: 5px;
     height: 20px;
+    width: 65%;
 }
 .card-stats1 {
-    background-color: aqua;
-    height: 20px;
+    grid-area: stat1;
+    text-align: left;
+    font-size: large;
+    font-weight: bolder;
+    font-size-adjust: inherit;
+    padding: 10px 15px 1px 40px;
+    /* background-color: aqua; */
+    height: 30px;
 }
 .card-stats2 {
-    background-color: lightsalmon;
-    height: 20px;
+    grid-area: stat2;
+    text-align: left;
+    font-size: large;
+    font-weight: bolder;
+    font-size-adjust: inherit;
+    padding: 10px 15px 1px 30px;
+    /* background-color: aqua; */
+    height: 30px;
 }
 .card-stats3 {
-    background-color: lightblue;
-    height: 20px;
+    grid-area: stat3;
+    text-align: left;
+    font-size: large;
+    font-weight: bolder;
+    font-size-adjust: inherit;
+    padding: 1px 15px 5px 40px;
+    /* background-color: lightsalmon; */
+    /* border-style: solid;
+    border-left: #000000;
+    border-right: #000000;
+    border-bottom: #000000; */
+    height: 30px;
+}
+.card-stats4 {
+    grid-area: stat4;
+    text-align: left;
+    font-size: large;
+    font-weight: bolder;
+    font-size-adjust: inherit;
+    padding: 1px 15px 5px 30px;
+    /* background-color: lightsalmon; */
+    /* border-style: solid;
+    border-left: #000000;
+    border-right: #000000;
+    border-bottom: #000000; */
+    height: 30px;
+}
+.card-stats5 {
+    grid-area: stat5;
+    text-align: left;
+    padding: 20px 15px 5px 40px;
+    /* background-color: lightblue; */
+    /* border-style: solid;
+    border-left: #000000;
+    border-right: #000000;
+    border-bottom: #000000; */
+    height: 30px;
+}
+.card-stats6 {
+    grid-area: stat6;
+    text-align: left;
+    padding: 20px 5px 5px 30px;
+    /* background-color: lightblue; */
+    /* border-style: solid;
+    border-left: #000000;
+    border-right: #000000;
+    border-bottom: #000000; */
+    height: 30px;
 }
 .dropdown {
     display: inline-block;
@@ -75,13 +178,10 @@ body{
     0% {
         opacity: 0.8;
         color: #00A4BD;
-    }
-    50% {
+    } 50% {
         opacity: 1;
         color: darkblue;
-    }
-    100% {
+    } 100% {
         opacity: 1;
-        color: blue;
-    }
+        color: blue;}
 }
