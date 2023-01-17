@@ -3,16 +3,30 @@ html, body {
 }
 body{
     font-family: 'Exo 2', sans-serif;
-    /* display: flex; */
+    background:  radial-gradient(circle, black, white);
+    background-image: url(./Images/puppy1.jpg);
+    background-repeat: no-repeat;
+    background-position: center top;
+    
+    /* display: flex;
     align-content: center;
-    justify-content: center;
+    justify-content: center; */
 }
-main {
-    display: inline-flex;
-    flex-direction: row;
-    flex: auto;
-    flex-flow: column;
+.intro {
+    text-align: center;
+    border-style: ridge;
 }
+.breed-input {
+   display: grid;
+   justify-content: center;
+   grid-template-columns: 50%;
+   min-width: 200px;
+}
+.all-dropdwons {
+    display: grid;
+    grid-template-columns: auto;
+}
+
 .dog-result {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -107,7 +121,7 @@ img {
     text-align: left;
     font-size: x-large;
     font-weight: bolder;
-    padding: 10px 1px 5px 34px;
+    padding: 10px 1px 5px 32px;
     /* background-color: lightsalmon; */
     /* border-style: solid;
     border-left: #000000;

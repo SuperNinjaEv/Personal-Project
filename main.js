@@ -141,51 +141,52 @@ function fetchFunction(searchURL) {
 };
 
 function pokeDogs(dt) {
+    document.querySelector('h1').innerText = 'Pick A Poke Pup!'
     for (let dog of dt) {
-    let cardArtic = document.createElement('article');
-    let cardTitle = document.createElement('section');
-    let cardImg = document.createElement('img');
-    let cardHeight = document.createElement('section');
-    let cardWeight = document.createElement('section');
-    let cardBark = document.createElement('section');
-    let cardEnergy = document.createElement('section');
-    let cardTrain = document.createElement('section');
-    let cardDrool = document.createElement('section');
-    let cardPlay = document.createElement('section');
-    let cardProtek = document.createElement('section');
-    let cardShed = document.createElement('section');
-    let cardCoat = document.createElement('section');
-    cardArtic.className = 'dog-result';
-    cardTitle.setAttribute('class', 'card-title');
-    cardTitle.innerHTML = `<strong>${dog.name}</strong><br>`;  //change the [0] when done and back to loop**
-    resultArea.append(cardArtic);
-    cardImg.setAttribute('src', dog.image_link );
-    cardImg.setAttribute('alt', `${dog.name} Pic`);
-    // cardImg.setAttribute('height', '200px');
-    // cardImg.setAttribute('width', '300px');
-    cardImg.setAttribute('class', 'card-img');
-    cardHeight.setAttribute('class', 'card-stats');
-    cardHeight.innerHTML = `<small><em>Max Height: ${dog.max_height_male}"</em></small>&nbsp;&nbsp;&nbsp;&nbsp;<small><em>Max Weight: ${dog.max_weight_male} lbs.</em></small>`;
-    // cardWeight.setAttribute('class', 'card-stats');
-    // cardWeight.innerHTML = `<small><em>Max Weight: ${dog.max_weight_male} lbs.</em></small>`;
-    cardBark.setAttribute('class', 'card-stats1');
-    cardBark.innerHTML = `<small><strong>Barking:</strong></small> ${dog.barking}`;
-    cardEnergy.setAttribute('class', 'card-stats2');
-    cardEnergy.innerHTML = `<small><strong>Energy:</strong></small> ${dog.energy}`;
-    cardTrain.setAttribute('class', 'card-stats3');
-    cardTrain.innerHTML = `<small><strong>Trainability:</strong></small> ${dog.trainability}`;
-    cardDrool.setAttribute('class', 'card-stats4');
-    cardDrool.innerHTML = `<small><strong>Drooling:</strong></small> ${dog.drooling}`;
-    cardPlay.setAttribute('class', 'card-stats5');
-    cardPlay.innerHTML = `<small><strong>Playfulness:</strong></small> ${dog.playfulness}`;
-    cardProtek.setAttribute('class', 'card-stats6');
-    cardProtek.innerHTML = `<small><strong>Protectiveness:</strong></small> ${dog.protectiveness}`;
-    cardShed.setAttribute('class', 'card-stats7');
-    cardShed.innerHTML = `<small><strong>Shedding:</strong></small> ${dog.shedding}`;
-    cardCoat.setAttribute('class', 'card-stats8');
-    cardCoat.innerHTML = `<small><strong>Coat Length:</strong></small> ${dog.coat_length}`;
+        let cardArtic = document.createElement('article');
+        let cardTitle = document.createElement('section');
+        let cardImg = document.createElement('img');
+        let cardHeight = document.createElement('section');
+        let cardWeight = document.createElement('section');
+        let cardBark = document.createElement('section');
+        let cardEnergy = document.createElement('section');
+        let cardTrain = document.createElement('section');
+        let cardDrool = document.createElement('section');
+        let cardPlay = document.createElement('section');
+        let cardProtek = document.createElement('section');
+        let cardShed = document.createElement('section');
+        let cardCoat = document.createElement('section');
+        cardArtic.className = 'dog-result';
+        cardTitle.setAttribute('class', 'card-title');
+        cardTitle.innerHTML = `<strong>${dog.name}</strong><br>`;  //change the [0] when done and back to loop**
+        resultArea.append(cardArtic);
+        cardImg.setAttribute('src', dog.image_link);
+        cardImg.setAttribute('alt', `${dog.name} Pic`);
+        // cardImg.setAttribute('height', '200px');
+        // cardImg.setAttribute('width', '300px');
+        cardImg.setAttribute('class', 'card-img');
+        cardHeight.setAttribute('class', 'card-stats');
+        cardHeight.innerHTML = `<small><em>Max Height: ${dog.max_height_male}"</em></small>&nbsp;&nbsp;&nbsp;&nbsp;<small><em>Max Weight: ${dog.max_weight_male} lbs.</em></small>`;
+        // cardWeight.setAttribute('class', 'card-stats');
+        // cardWeight.innerHTML = `<small><em>Max Weight: ${dog.max_weight_male} lbs.</em></small>`;
+        cardBark.setAttribute('class', 'card-stats1');
+        cardBark.innerHTML = `<small><strong>Barking:</strong></small> ${dog.barking}`;
+        cardEnergy.setAttribute('class', 'card-stats2');
+        cardEnergy.innerHTML = `<small><strong>Energy:</strong></small> ${dog.energy}`;
+        cardTrain.setAttribute('class', 'card-stats3');
+        cardTrain.innerHTML = `<small><strong>Trainability:</strong></small> ${dog.trainability}`;
+        cardDrool.setAttribute('class', 'card-stats4');
+        cardDrool.innerHTML = `<small><strong>Drooling:</strong></small> ${dog.drooling}`;
+        cardPlay.setAttribute('class', 'card-stats5');
+        cardPlay.innerHTML = `<small><strong>Playfulness:</strong></small> ${dog.playfulness}`;
+        cardProtek.setAttribute('class', 'card-stats6');
+        cardProtek.innerHTML = `<small><strong>Protectiveness:</strong></small> ${dog.protectiveness}`;
+        cardShed.setAttribute('class', 'card-stats7');
+        cardShed.innerHTML = `<small><strong>Shedding:</strong></small> ${dog.shedding}`;
+        cardCoat.setAttribute('class', 'card-stats8');
+        cardCoat.innerHTML = `<small><strong>Coat Length:</strong></small> ${dog.coat_length}`;
 
-    cardArtic.append(cardTitle, cardImg, cardHeight, cardWeight, cardBark, cardEnergy, cardTrain,cardPlay, cardProtek, cardDrool, cardShed, cardCoat);
+        cardArtic.append(cardTitle, cardImg, cardHeight, cardWeight, cardBark, cardEnergy, cardTrain, cardPlay, cardProtek, cardDrool, cardShed, cardCoat);
     };
     main.append(resultArea);
 }

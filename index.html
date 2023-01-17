@@ -24,19 +24,22 @@
     </header>
 
     <div class="intro">
-
-    </div>
+        Having a pet dog is a huge responsibility. Using this Puppy Picker will help you find the right pup for your
+        lifestyle!
+    </div><br>
 
     <main>
         <form>
             <!-- Breed Input Box -->
-            <label for="dog-name">
-                Do you want to know more about a specific breed?
-            </label>
-            <input id="dog-name" type="text" name="name-breed" placeholder="Enter breed here..." />
-            <button class="submit-breed">
-                Submit
-            </button>
+            <div class="breed-input">
+                <label for="dog-name">
+                    Do you want to know more about a specific breed?
+                </label>
+                <input id="dog-name" type="text" name="name-breed" placeholder="Enter breed here..." />
+                <button class="submit-breed">
+                    Submit
+                </button>
+            </div>
             <br>
 
             <!-- Started with the idea to have a dropdown menu that you click to have the options appear, but I chose to go the route of making the options upon on hover. -->
@@ -45,46 +48,48 @@
             </select> -->
 
             <!-- Dog size drodown for HEIGHT & WEIGHT params -->
-            <div class="dropdown">
-                <button>What size pup do you prefer?</button>
-                <div id="dog-size" class="dropdown-content">
-                    <option id="dog-size" value="small">Tall</option>
-                    <option id="dog-size" value="medium">Grande</option>
-                    <option id="dog-size" value="large">Venti</option>
-                    <option id="dog-size" value="all">1 of each please!</option>
+            <div class="all-dropdowns">
+                <div class="dropdown d1">Dog Size:<br>
+                    <button>What size pup do you prefer?</button>
+                    <div id="dog-size" class="dropdown-content">
+                        <option id="dog-size" value="small">Tall</option>
+                        <option id="dog-size" value="medium">Grande</option>
+                        <option id="dog-size" value="large">Venti</option>
+                        <option id="dog-size" value="all">1 of each please!</option>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Housing size dropdown for BARKING param -->
-            <div class="dropdown">
-                <button>What is your living situation like?</button>
-                <div id="housing-barking" class="dropdown-content">
-                    <option id="housing-barking" value="room">I have a room.</option>
-                    <option id="housing-barking" value="apt">I have an apartment</option>
-                    <option id="housing-barking" value="house">I have a detached home, but no yard.</option>
-                    <option id="housing-barking" value="yard">I have a detached home with yard.</option>
+                <!-- Housing size dropdown for BARKING param -->
+                <div class="dropdown d2">Barking levels:<br>
+                    <button>What is your living situation like?</button>
+                    <div id="housing-barking" class="dropdown-content">
+                        <option id="housing-barking" value="room">I have a room.</option>
+                        <option id="housing-barking" value="apt">I have an apartment</option>
+                        <option id="housing-barking" value="house">I have a detached home, but no yard.</option>
+                        <option id="housing-barking" value="yard">I have a detached home with yard.</option>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Activity levels dropdown for ENERGY param -->
-            <div class="dropdown">
-                <button>How often do you want to go on a walk?</button>
-                <div id="activity-level" class="dropdown-content">
-                    <option id="activity-level" value="never">What is a "walk"?</option>
-                    <option id="activity-level" value="rarely">Once a week, tops.</option>
-                    <option id="activity-level" value="often">A couple days a week.</option>
-                    <option id="activity-level" value="daily">Everyday please!</option>
+                <!-- Activity levels dropdown for ENERGY param -->
+                <div class="dropdown d3">Activity Requirements:<br>
+                    <button>How often do you want to go on a walk?</button>
+                    <div id="activity-level" class="dropdown-content">
+                        <option id="activity-level" value="never">What is a "walk"?</option>
+                        <option id="activity-level" value="rarely">Once a week, tops.</option>
+                        <option id="activity-level" value="often">A couple days a week.</option>
+                        <option id="activity-level" value="daily">Everyday please!</option>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Dog experience dropdown for TRAINABILITY param -->
-            <div class="dropdown">
-                <button>Are you interested in training your pup?</button>
-                <div id="training" class="dropdown-content">
-                    <option id="training" value="none">Nope. It can just be a dog.</option>
-                    <option id="training" value="some">Definitely the basics.</option>
-                    <option id="training" value="advanced">Probably some fancy moves for fun.</option>
-                    <option id="training" value="max">I plan to work or compete with this pup.</option>
+                <!-- Dog experience dropdown for TRAINABILITY param -->
+                <div class="dropdown d4">Trainability:<br>
+                    <button>Are you interested in training your pup?</button>
+                    <div id="training" class="dropdown-content">
+                        <option id="training" value="none">Nope. It can just be a dog.</option>
+                        <option id="training" value="some">Definitely the basics.</option>
+                        <option id="training" value="advanced">Probably some fancy moves for fun.</option>
+                        <option id="training" value="max">I plan to work or compete with this pup.</option>
+                    </div>
                 </div>
             </div>
         </form>
@@ -97,7 +102,6 @@
         <!-- <a href="./results.html">onclick="window.location='./results.html';"</a> -->
         <button class="fetch" type="submit">FETCH YOUR DOGS!
         </button>
-
     </main>
     <div class="result-area"></div>
 
