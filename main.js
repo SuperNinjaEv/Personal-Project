@@ -148,7 +148,8 @@ function fetchFunction(searchURL) {
 };
 
 function pokeDogs(dt) {
-    document.querySelector('h1').innerText = 'Pick A Poke Pup!'
+    document.querySelector('h1').innerText = 'Pick A Poke Pup'
+    document.querySelector('.intro').innerText = 'Below are the dogs that best fit you!';
     for (let dog of dt) {
         let cardArtic = document.createElement('article');
         let cardTitle = document.createElement('section');
@@ -200,7 +201,8 @@ function pokeDogs(dt) {
 
 fetchButton.addEventListener('click', (event) => {
     main.innerHTML = '';
-    setTimeout(fetchFunction, 4000, searchURL)
+    document.querySelector('.intro-img').remove()
+    setTimeout(fetchFunction, 3000, searchURL)
     searchURL = BASE_URL;
 });
 
