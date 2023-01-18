@@ -1,5 +1,7 @@
-html, body {
-    height: 95%;
+header {
+    background-color: #00A4BD;
+    height: 50px;
+    justify-self: center;
 }
 body{
     font-family: 'Exo 2', sans-serif;
@@ -12,19 +14,23 @@ body{
     align-content: center;
     justify-content: center; */
 }
-/* body::before {
+/* main::before {
     content: "";
     position: absolute;
     background-image: url('https://i.pinimg.com/564x/d3/21/16/d32116bf4c07a210c78234ebcefd45f8.jpg');
     background-size: cover;
-    background-repeat: repeat;
-    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
     top: 0px;
     right: 0px;
     bottom: 0px;
     left: 0px;
-    opacity: .2;
+    opacity: .3;
 } */
+
 .intro {
     text-align: center;
     border-style: ridge;
@@ -33,12 +39,21 @@ body{
 .breed-input {
    display: grid;
    justify-content: center;
-   grid-template-columns: 50%;
+   grid-template-columns: 30%;
    min-width: 200px;
    position: relative;
 }
+main {
+    display: grid;
+    grid-column: 20%;
+    /* justify-content: center; */
+}
 .fetch {
     position: relative;
+    /* display: grid; */
+    max-width: 125px;
+    justify-self: center;
+
 }
 .all-dropdowns {
     display: grid;
@@ -81,11 +96,13 @@ body{
     width: 3.3in;
     overflow: hidden;
     position: relative;
+    margin-top: 25px;
+    margin-bottom: ;
 
 }
 .dog-result:hover {
     box-shadow: 25px 20px 15px rgb(24, 24, 49), 25px 35px 25px darkslategray;
-    transition-duration: 0.5s;
+    transition-duration: 0.4s;
     transition-timing-function: ease-in;
     transform: skew(1deg) rotate(1deg);
     transform-style: preserve-3d;
@@ -251,6 +268,8 @@ img {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+    text-align: center;
+    
 }
 @keyframes pulse {
     0% {

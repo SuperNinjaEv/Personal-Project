@@ -124,8 +124,6 @@ choicesForm.addEventListener('click', (event) => {
 });
 
 function fetchFunction(searchURL) {
-    main.innerHTML = '';
-
     fetch(searchURL, {
         headers: {
             'X-Api-Key': apiKey
@@ -142,6 +140,7 @@ function fetchFunction(searchURL) {
 
 function pokeDogs(dt) {
     document.querySelector('h1').innerText = 'Pick A Poke Pup!'
+    doc
     for (let dog of dt) {
         let cardArtic = document.createElement('article');
         let cardTitle = document.createElement('section');
@@ -192,7 +191,8 @@ function pokeDogs(dt) {
 }
 
 fetchButton.addEventListener('click', (event) => {
-    setTimeout(fetchFunction, 500, searchURL)
+    main.innerHTML = '';
+    setTimeout(fetchFunction, 4000, searchURL)
     searchURL = BASE_URL;
 });
 
