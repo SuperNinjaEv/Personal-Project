@@ -28,11 +28,15 @@ const resultArea = document.querySelector('.result-area');
 fetch('https://dog.ceo/api/breeds/image/random')
     .then((response) => response.json())
     .then((d) => {
-        console.log(d)
+        console.log(d);
+        let aRandom = document.createElement('a');
         let introImg = document.createElement('img');
+        aRandom.href = "./results.html";
         introImg.src = d.message;
         introImg.className = 'intro-img';
-        document.querySelector('.intro').after(introImg)
+        introImg.setAttribute('alt', 'Click here for random dog facts!');
+        aRandom.prepend(introImg);
+        document.querySelector('.intro').after(aRandom);
     });
 // Using event delegation, I have setup a listener for my FORM tag and all OPTION elements within.
 // This allows me to see when any are clicked, and subsequently create and add the chosen option to my Section 
@@ -212,12 +216,4 @@ fetchButton.addEventListener('click', (event) => {
     setTimeout(fetchFunction, 2500, searchURL)
     searchURL = BASE_URL;
 });
-
-
-
-
-
-
-
-
 
