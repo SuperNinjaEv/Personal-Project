@@ -14,6 +14,13 @@ body{
     align-content: center;
     justify-content: center; */
 }
+.intro-img {
+    height: 80px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+}
 /* main::before {
     content: "";
     position: absolute;
@@ -39,9 +46,14 @@ body{
 .breed-input {
    display: grid;
    justify-content: center;
-   grid-template-columns: 30%;
+   /* grid-template-columns: 30%; */
+   max-width: fit-content;
    min-width: 200px;
+   margin-left: auto;
+   margin-right: auto;
+   background-color: lavender;
    position: relative;
+   text-align: center;
 }
 main {
     display: grid;
@@ -67,6 +79,34 @@ main {
     height: 50px;
     margin: 10px;
     padding: 5px 5px;
+}
+.d1{
+    text-align: center;
+    max-width: fit-content;
+    background-color: lavender;
+    margin-left: auto;
+    margin-right: auto;
+}
+.d2{
+    text-align: center;
+    max-width: fit-content;
+    background-color: lavender;
+    margin-left: auto;
+    margin-right: auto;
+}
+.d3{
+    text-align: center;
+    max-width: fit-content;
+    background-color: lavender;
+    margin-left: auto;
+    margin-right: auto;
+}
+.d4{
+    text-align: center;
+    max-width: fit-content;
+    background-color: lavender;
+    margin-left: auto;
+    margin-right: auto;
 }
 .result-area {
     display: grid;
@@ -121,7 +161,7 @@ main {
     justify-content: flex-start;
     /* background-color: lightpink; */
 }
-img {
+.card-img {
     grid-area: img;
     border:3px ridge black;
     border-radius: 5px;

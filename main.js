@@ -24,6 +24,15 @@ const fetchButton = document.querySelector('.fetch');
 const choicesSection = document.querySelector('section');
 const resultArea = document.querySelector('.result-area');
 
+fetch ('https://dog.ceo/api/breeds/image/random')
+.then((response) => response.json())
+.then((d) => {
+    console.log(d)
+    let introImg = document.createElement('img');
+    introImg.src = d.message;
+    introImg.className = 'intro-img';
+    document.querySelector('.intro').after(introImg)
+});
 // Using event delegation, I have setup a listener for my FORM tag and all OPTION elements within.
 // This allows me to see when any are clicked, and subsequently create and add the chosen option to my Section 
 choicesForm.addEventListener('click', (event) => {
@@ -140,7 +149,6 @@ function fetchFunction(searchURL) {
 
 function pokeDogs(dt) {
     document.querySelector('h1').innerText = 'Pick A Poke Pup!'
-    doc
     for (let dog of dt) {
         let cardArtic = document.createElement('article');
         let cardTitle = document.createElement('section');
