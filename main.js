@@ -144,7 +144,11 @@ function fetchFunction(searchURL) {
             console.log(data)
             console.log(data[0].name)
         })
-        .catch((error) => console.log('Who let the dogs out?', error));
+        .catch((error) => {
+            console.log('Who let the dogs out?', error)
+            document.querySelector('.intro').innerHTML = `No pups met your exact criteria, it's a you problem.<br>Try again with different choices.`;
+            main.innerHTML = '<div class="error-msg"><img src="https://www.icegif.com/wp-content/uploads/lilo-and-stitch-disney.gif"></img></div>';
+        });
 };
 
 function pokeDogs(dt) {
@@ -202,7 +206,7 @@ function pokeDogs(dt) {
 fetchButton.addEventListener('click', (event) => {
     main.innerHTML = '';
     document.querySelector('.intro-img').remove()
-    setTimeout(fetchFunction, 3000, searchURL)
+    setTimeout(fetchFunction, 2500, searchURL)
     searchURL = BASE_URL;
 });
 

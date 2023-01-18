@@ -14,6 +14,11 @@ body{
     align-content: center;
     justify-content: center; */
 }
+main {
+    display: grid;
+    grid-column: 1fr;
+    justify-content: center;
+}
 .intro-img {
     height: 80px;
     display: block;
@@ -21,6 +26,10 @@ body{
     margin-right: auto;
     padding-top: 5px;
     padding-bottom: 5px;
+}
+.error-msg {
+    padding-top: 50px;
+    justify-self: center;
 }
 /* main::before {
     content: "";
@@ -56,13 +65,8 @@ body{
    position: relative;
    text-align: center;
 }
-main {
-    display: grid;
-    grid-column: 20%;
-    /* justify-content: center; */
-}
 .fetch {
-    max-width: 125px;
+    max-width: 150px;
     justify-self: center;
 }
 .all-dropdowns {
@@ -74,8 +78,8 @@ main {
 }
 .all-dropdowns button {
     width: auto;
-    height: 40px;
-    margin: 10px;
+    height: 30px;
+    margin: 5px;
     padding: 5px 5px;
 }
 .d1{
@@ -288,6 +292,7 @@ main {
 }
 .dropdown:hover .dropdown-content {
     display: block;
+    z-index: 1;
 }
 .dropdown-content option {
    background-color: #FFFFFF;
@@ -320,8 +325,6 @@ main {
         opacity: 1;
         color: blue;}
 }
-
-
 @keyframes sheen {
   0% {
     transform: skewY(-45deg) translateX(0);
@@ -330,7 +333,6 @@ main {
     transform: skewY(-45deg) translateX(12.5em);
   }
 }
-
 button {
     text-align: center;
     overflow: hidden;
@@ -348,8 +350,6 @@ button {
     transition: all 0.2s ease-in-out;
     position: relative;
     overflow: hidden;
-}
-.fetch {
 }
 button:before {
   content: "";
@@ -372,4 +372,9 @@ button:hover {
 button:hover::before {
   transform: skewX(-45deg) translateX(13.5em);
  transition: all 0.5s ease-in-out;
+}
+.chosen {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
 }
