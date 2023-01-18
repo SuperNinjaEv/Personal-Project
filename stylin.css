@@ -1,3 +1,6 @@
+a {
+justify-self: left;
+}
 header {
     background-color: lavender;
     height: 50px;
@@ -17,15 +20,16 @@ body{
 main {
     display: grid;
     grid-column: 1fr;
-    justify-content: center;
+    /* justify-content: center; */
 }
 .intro-img {
-    height: 80px;
+    height: 100px;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    border: 2px ridge lightseagreen;
 }
 .error-msg {
     padding-top: 50px;
@@ -50,8 +54,9 @@ main {
 
 .intro {
     text-align: center;
-    border-style: ridge;
+    border: 2px ridge lightseagreen;
     position: relative;
+    padding-bottom: 2px;
 }
 .breed-input {
    display: grid;
@@ -138,8 +143,8 @@ main {
     width: 3.3in;
     overflow: hidden;
     position: relative;
-    margin-top: 25px;
-    margin-bottom: ;
+    margin-top: 20px;
+    margin-bottom: 20px;
 
 }
 .dog-result:hover {
