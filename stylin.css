@@ -3,30 +3,61 @@ html, body {
 }
 body{
     font-family: 'Exo 2', sans-serif;
-    background:  radial-gradient(circle, black, white);
+    /* background:  radial-gradient(circle, black, white); */
     background-image: url(./Images/puppy1.jpg);
     background-repeat: no-repeat;
     background-position: center top;
-    
+    background-attachment: fixed;
     /* display: flex;
     align-content: center;
     justify-content: center; */
 }
+/* body::before {
+    content: "";
+    position: absolute;
+    background-image: url('https://i.pinimg.com/564x/d3/21/16/d32116bf4c07a210c78234ebcefd45f8.jpg');
+    background-size: cover;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: .2;
+} */
 .intro {
     text-align: center;
     border-style: ridge;
+    position: relative;
 }
 .breed-input {
    display: grid;
    justify-content: center;
    grid-template-columns: 50%;
    min-width: 200px;
+   position: relative;
 }
-.all-dropdwons {
+.fetch {
+    position: relative;
+}
+.all-dropdowns {
     display: grid;
-    grid-template-columns: auto;
+    margin-left: auto;
+    margin-right: auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: center;
 }
-
+.all-dropdowns button {
+    width: auto;
+    height: 50px;
+    margin: 10px;
+    padding: 5px 5px;
+}
+.result-area {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+}
 .dog-result {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -49,6 +80,8 @@ body{
     height: 4.5in;
     width: 3.3in;
     overflow: hidden;
+    position: relative;
+
 }
 .dog-result:hover {
     box-shadow: 25px 20px 15px rgb(24, 24, 49), 25px 35px 25px darkslategray;
